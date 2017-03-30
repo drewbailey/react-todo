@@ -31,8 +31,8 @@ class App extends Component {
   handleToggle = (id) => {
     const getToggledTodo = pipe(findById, toggleTodo)
     const updated = getToggledTodo(id, this.state.todos)
-    
-    const getUpdatedTodos = partial(updateTodo, this.state.todos) 
+
+    const getUpdatedTodos = partial(updateTodo, this.state.todos)
     const updatedTodos = getUpdatedTodos(updated)
 
     this.setState({
@@ -48,8 +48,8 @@ class App extends Component {
     const newTodo = { name: this.state.currentTodo, isComplete: false, id: generatedId()}
     const updatedTodos = addTodo(this.state.todos, newTodo)
 
-    this.setState({ 
-      todos: updatedTodos, 
+    this.setState({
+      todos: updatedTodos,
       currentTodo: '',
       errorMessage: ''
     })
